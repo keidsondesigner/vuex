@@ -9,8 +9,30 @@ export default new Vuex.Store({
     completedLessons: 10,
     aulasCompletas: [],
     acao: null,
+    livros: [
+      {
+        name: 'Senhor dos Aneis',
+        lido: true,
+      },
+      {
+        name: 'Exterminador do Futueo',
+        lido: true,
+      },
+      {
+        name: 'Caçadores',
+        lido: false,
+      },
+      {
+        name: 'Dragon Ball',
+        lido: false,
+      },
+    ],
   },
   getters: {
+    livrosLidos(state) {
+      // Livros é um Array então vou usar o filter() para retornar os livros "lidos";
+      return state.livros.filter((livro) => livro.lido);
+    },
   },
   mutations: {
     CHANGE_USER(state, payload) {
