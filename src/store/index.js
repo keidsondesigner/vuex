@@ -6,19 +6,23 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: 'Arthur',
-    aulasCompletas: 10,
+    completedLessons: 10,
+    aulasCompletas: [],
   },
   getters: {
   },
   mutations: {
-    changeUser(state) {
-      state.user = 'Ana';
+    CHANGE_USER(state, payload) {
+      state.user = payload;
     },
-    completarAulas(state) {
-      state.aulasCompletas += 1;
+    PREV_LESSON(state) {
+      state.completedLessons += 1;
     },
-    voltarAulas(state) {
-      state.aulasCompletas -= 1;
+    NEXT_LESSON(state) {
+      state.completedLessons -= 1;
+    },
+    COMPLETAR_AULA(state, payload) {
+      state.aulasCompletas.push(payload);
     },
   },
   actions: {
