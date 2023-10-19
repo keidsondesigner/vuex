@@ -2,6 +2,11 @@
   <div id="app">
     <User />
     <Curso />
+
+    <div>
+      <h2>actionUpdateAcao</h2>
+      {{ $store.state.acao }}
+    </div>
   </div>
 </template>
 <script>
@@ -12,6 +17,10 @@ export default {
   components: {
     User,
     Curso,
+  },
+  created() {
+    // Quando minha aplicação for criada vou disparar minha Action;
+    this.$store.dispatch('actionUpdateAcao');
   },
 };
 </script>

@@ -81,9 +81,14 @@ export default {
       // this.$store.commit('completarAulas');
       // com o mapMutations acesso atravéz do "this"
     },
+    // Com Actions
     handleClickCompletarAula(item) {
-      this.COMPLETAR_AULA(item);
+      this.$store.dispatch('completarAula', item);
     },
+    // Sem Actions
+    // handleClickCompletarAula(item) {
+    //   this.COMPLETAR_AULA(item);
+    // },
   },
 };
 </script>
