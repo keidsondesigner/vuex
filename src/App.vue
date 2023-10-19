@@ -1,12 +1,20 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link>
-    </nav>
-    <router-view/>
+    <User />
+    <Curso />
   </div>
 </template>
+<script>
+import User from '@/components/UserComponent.vue';
+import Curso from '@/components/CursoComponent.vue';
 
+export default {
+  components: {
+    User,
+    Curso,
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
