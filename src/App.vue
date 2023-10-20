@@ -25,6 +25,8 @@
 
     <div>
       <h2>Livros Lidos</h2>
+      <!-- $store.state.livros
+        posso usar de uma formar mais simples com mapGetters no computed; -->
       <ul>
         <li v-for="livro in livrosLidos" :key="livro.name">
           <p>
@@ -52,7 +54,9 @@ export default {
   },
   created() {
     // Quando minha aplicação for criada vou disparar minha Action;
-    this.$store.dispatch('actionUpdateAcao');
+    // disparado o método actionUpdateAcao do "módulo acao";
+    console.log(this.$store);
+    this.$store.dispatch('acao/actionUpdateAcao');
   },
 };
 </script>
